@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.21568628, g: 0.23529412, b: 0.25490198, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 04a24b3d949da654b9839f0af7e30570, type: 2}
   m_HaloStrength: 0.5
@@ -96,7 +96,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112006932, guid: f2de524f6aaff624fbdca6f131b25f72, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: c5cef1c213194894182ad19dd2ad2f07, type: 2}
   m_LightingSettings: {fileID: 1769744728}
 --- !u!196 &4
 NavMeshSettings:
@@ -1727,12 +1727,56 @@ PrefabInstance:
     - {fileID: 1420914211900992, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
     - {fileID: 1075358466963024, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
     - {fileID: 1238960178054446, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1931189525807268, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1842422414332386, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1476512063463666, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1916792058330002, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1934627506358144, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1056072693938328, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1575017691751506, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1453648056758940, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1418320080129588, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1106346609741966, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1177485266386836, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1637519866842516, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1879833123524734, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1413028046883790, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1290555491743586, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1567608088465192, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1490542838883752, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1902530677680980, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1622077520066138, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1712688981173098, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1032592672317090, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1754682128018010, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1550554796006090, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1593955931723966, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1959598201543344, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1326929769943234, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1693490154700154, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1921048419835238, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1985139978672508, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1603297345260320, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1550159880023178, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1660460570105602, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1785055683692588, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1566685252893470, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1721080384917106, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1368107290427198, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1309929725234170, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1340533248263888, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1472484127198808, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1328132177166700, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1587592282292542, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1356127572615294, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1378978685820990, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+    - {fileID: 1285117408739332, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4007291449629790, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
       insertIndex: 26
       addedObject: {fileID: 1818826366}
     - targetCorrespondingSourceObject: {fileID: 4139379573301796, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
-      insertIndex: 1276
+      insertIndex: 1275
       addedObject: {fileID: 1087892225}
     - targetCorrespondingSourceObject: {fileID: 4139379573301796, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
       insertIndex: -1
@@ -3653,7 +3697,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.995142, b: 0.8632076, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -3712,7 +3756,7 @@ Transform:
   m_GameObject: {fileID: 801058737}
   serializedVersion: 2
   m_LocalRotation: {x: 0.72394997, y: 0.15256745, z: 0.47434255, w: 0.4770942}
-  m_LocalPosition: {x: 40.99, y: 26.99, z: 55.04}
+  m_LocalPosition: {x: 50, y: -30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6713,8 +6757,8 @@ LightingSettings:
   m_Name: Settings.lighting
   serializedVersion: 6
   m_GIWorkflowMode: 1
-  m_EnableBakedLightmaps: 1
-  m_EnableRealtimeLightmaps: 1
+  m_EnableBakedLightmaps: 0
+  m_EnableRealtimeLightmaps: 0
   m_RealtimeEnvironmentLighting: 0
   m_BounceScale: 1
   m_AlbedoBoost: 1
