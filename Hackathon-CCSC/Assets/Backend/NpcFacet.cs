@@ -19,7 +19,7 @@ public class NpcFacet : Facet
         string playerPrompt
     )
     {
-        string openaiApiKey = "";
+        string openaiApiKey = " ";
 
 
         // 1. Correct JSON structure for Chat Completions
