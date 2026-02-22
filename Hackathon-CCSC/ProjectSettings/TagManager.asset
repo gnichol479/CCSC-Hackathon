@@ -14,6 +14,7 @@ TagManager:
   - Interactale
   - Interactable
   - Blender
+  - TaskBoard
   layers:
   - Default
   - TransparentFX
