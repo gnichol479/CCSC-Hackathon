@@ -36,6 +36,19 @@ public MonoBehaviour playerController;
         if (hit.collider.CompareTag("Interactable") ||
             hit.collider.CompareTag("Blender"))
         {
+
+    if (Input.GetKeyDown(KeyCode.E))
+    {
+        ReceptionPhone phone = hit.collider.GetComponent<ReceptionPhone>();
+        if (phone != null)
+        {
+            phone.TriggerPhoneCall();
+            return;
+        }
+
+        // other interact logic here
+    }
+
             currentInteractable = hit.collider.gameObject;
 
             interactUI.SetActive(true);

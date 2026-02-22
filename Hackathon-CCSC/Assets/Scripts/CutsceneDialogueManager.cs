@@ -19,6 +19,11 @@ public class CutsceneDialogueManager : MonoBehaviour
     public Transform bossCameraPoint;
     public Transform playerSpawnPoint;
     public MonoBehaviour playerController;
+    private bool skipTeleport = false;
+private bool showCustomerChoiceAfter = false;
+
+[Header("Customer Service Choice")]
+public GameObject customerServiceChoicePanel;
 
     [System.Serializable]
     public struct DialogueLine
@@ -107,26 +112,48 @@ public class CutsceneDialogueManager : MonoBehaviour
             new DialogueLine { speaker = "CEO", line = "Adjust the AI's behavioral parameters." }
         });
     }
+    public void StartCustomerServicePhoneCall()
+{
+    skipTeleport = true;
+    showCustomerChoiceAfter = true;
+
+    StartDialogue(new DialogueLine[]
+    {
+        new DialogueLine { speaker = "ANGRY CUSTOMER", line = "I received my order." },
+        new DialogueLine { speaker = "ANGRY CUSTOMER", line = "But I would still like a refund." },
+        new DialogueLine { speaker = "CUSTOMER SERVICE AI", line = "I sincerely apologize for this inconvenience." },
+        new DialogueLine { speaker = "CUSTOMER SERVICE AI", line = "Refund approved." },
+        new DialogueLine { speaker = "ANGRY CUSTOMER", line = "Also I would like store credit." },
+        new DialogueLine { speaker = "CUSTOMER SERVICE AI", line = "That is completely understandable." },
+        new DialogueLine { speaker = "CUSTOMER SERVICE AI", line = "Store credit granted." },
+        new DialogueLine { speaker = "ANGRY CUSTOMER", line = "I would also like the company." },
+        new DialogueLine { speaker = "CUSTOMER SERVICE AI", line = "I respect your authority." },
+        new DialogueLine { speaker = "CUSTOMER SERVICE AI", line = "Ownership transferred." }
+    });
+}
 
     // =============================
     // CORE DIALOGUE SYSTEM
     // =============================
 
-    public void StartDialogue(DialogueLine[] dialogueLines)
+public void StartDialogue(DialogueLine[] dialogueLines)
+{
+    lines = dialogueLines;
+    index = 0;
+    dialogueActive = true;
+
+    playerController.enabled = false;
+
+    if (!skipTeleport)
     {
-        lines = dialogueLines;
-        index = 0;
-        dialogueActive = true;
-
         bossObject.SetActive(true);
-        playerController.enabled = false;
-
         TeleportPlayer(bossCameraPoint);
-
-        dialoguePanel.SetActive(true);
-
-        StartCoroutine(TypeLine());
     }
+
+    dialoguePanel.SetActive(true);
+
+    StartCoroutine(TypeLine());
+}
 
     IEnumerator TypeLine()
     {
@@ -181,18 +208,63 @@ public class CutsceneDialogueManager : MonoBehaviour
             EndDialogue();
         }
     }
+    public bool IsDialogueActive()
+{
+    return dialogueActive;
+}
+public void DisableCustomerServiceAI()
+{
+    Debug.Log("Disable button clicked");
 
-    void EndDialogue()
+    customerServiceChoicePanel.SetActive(false);
+
+    playerController.enabled = true;
+
+    Cursor.lockState = CursorLockMode.Locked;
+    Cursor.visible = false;
+}
+
+public void KeepCustomerServiceRunning()
+{
+    Debug.Log("Keep Running button clicked");
+
+    customerServiceChoicePanel.SetActive(false);
+
+    playerController.enabled = true;
+
+    Cursor.lockState = CursorLockMode.Locked;
+    Cursor.visible = false;
+}
+
+void EndDialogue()
+{
+    dialogueActive = false;
+    dialoguePanel.SetActive(false);
+
+    if (!skipTeleport)
     {
-        dialogueActive = false;
-
-        dialoguePanel.SetActive(false);
         bossObject.SetActive(false);
-
         TeleportPlayer(playerSpawnPoint);
-
-        playerController.enabled = true;
     }
+
+if (showCustomerChoiceAfter && customerServiceChoicePanel != null)
+{
+    customerServiceChoicePanel.SetActive(true);
+
+    Cursor.lockState = CursorLockMode.None;
+    Cursor.visible = true;
+}
+else
+{
+    playerController.enabled = true;
+
+    Cursor.lockState = CursorLockMode.Locked;
+    Cursor.visible = false;
+}
+
+    skipTeleport = false;
+    showCustomerChoiceAfter = false;
+}
 
     void TeleportPlayer(Transform targetPoint)
     {

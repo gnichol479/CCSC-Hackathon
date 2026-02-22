@@ -10,6 +10,25 @@ public class TaskBoardInteraction : MonoBehaviour
 
     private bool boardOpen = false;
 
+    public CutsceneDialogueManager dialogueManager;
+public GameObject customerServicePreviewImage;
+public GameObject taskPreviewPanel;
+
+public void AcceptCustomerServiceTask()
+{
+    // Hide preview + board
+    customerServicePreviewImage.SetActive(false);
+    taskPreviewPanel.SetActive(false);
+    boardUIPanel.SetActive(false);
+
+    // Lock cursor for gameplay transition
+    Cursor.lockState = CursorLockMode.Locked;
+    Cursor.visible = false;
+
+    // Start CEO cutscene
+    dialogueManager.StartCustomerServiceTask();
+}
+
     void Update()
     {
         if (!boardOpen)

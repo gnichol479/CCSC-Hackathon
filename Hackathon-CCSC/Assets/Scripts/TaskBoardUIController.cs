@@ -11,7 +11,10 @@ public class TaskBoardUIController : MonoBehaviour
     [Header("References")]
     public GameObject taskBoardUIPanel;
     public MonoBehaviour playerController;
+    public CutsceneDialogueManager dialogueManager;
+
     public CutsceneDialogueManager cutsceneManager;
+    public GameObject customerServicePreviewImage;
 public GameObject apiPreviewImage;
     // ===============================
     // OPEN PREVIEW
@@ -21,6 +24,12 @@ public GameObject apiPreviewImage;
         taskPreviewPanel.SetActive(true);
         smoothiePreviewImage.SetActive(true);
     }
+
+    public void OpenCustomerServicePreview()
+{
+    taskPreviewPanel.SetActive(true);
+    customerServicePreviewImage.SetActive(true);
+}
     public void OpenAPIPreview()
 {
     taskPreviewPanel.SetActive(true);
@@ -59,7 +68,24 @@ public void AcceptAPITask()
     cutsceneManager.StartAPITask();
 }
 
+public void AcceptCustomerServiceTask()
+{
+    // Hide preview images
+    smoothiePreviewImage.SetActive(false);
+    apiPreviewImage.SetActive(false);
+    customerServicePreviewImage.SetActive(false);
 
+    // Hide preview + board
+    taskPreviewPanel.SetActive(false);
+    taskBoardUIPanel.SetActive(false);
+
+    // Lock cursor back to gameplay mode
+    Cursor.lockState = CursorLockMode.Locked;
+    Cursor.visible = false;
+
+    // Start boss cutscene
+    dialogueManager.StartCustomerServiceTask();
+}
 
 
     // ===============================
@@ -69,6 +95,7 @@ public void CancelPreview()
 {
     smoothiePreviewImage.SetActive(false);
     apiPreviewImage.SetActive(false);
+    customerServicePreviewImage.SetActive(false);
 
     taskPreviewPanel.SetActive(false);
 }
