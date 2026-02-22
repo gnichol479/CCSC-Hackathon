@@ -11,35 +11,52 @@ public class PlayerInteraction : MonoBehaviour
     private GameObject currentInteractable;
 
     void Update()
+{
+    RaycastHit hit;
+
+    if (playerCamera != null &&
+        Physics.Raycast(playerCamera.transform.position,
+                        playerCamera.transform.forward,
+                        out hit,
+                        interactDistance))
     {
-        RaycastHit hit;
-
-        if (Physics.Raycast(playerCamera.transform.position,
-                            playerCamera.transform.forward,
-                            out hit,
-                            interactDistance))
+        if (hit.collider.CompareTag("Interactable") ||
+            hit.collider.CompareTag("Blender"))
         {
-if (hit.collider.CompareTag("Interactable") || 
-    hit.collider.CompareTag("Blender"))            {
-                currentInteractable = hit.collider.gameObject;
+            currentInteractable = hit.collider.gameObject;
 
+            interactUI.SetActive(true);
+
+            if (hit.collider.CompareTag("Blender"))
+            {
+                interactText.text = "Press E to Use Blender";
+            }
+            else
+            {
                 Interactable interactable = currentInteractable.GetComponent<Interactable>();
 
-                interactUI.SetActive(true);
-                interactText.text = "Press E to " + interactable.interactionName;
-
-                if (Input.GetKeyDown(KeyCode.E))
+                if (interactable != null)
                 {
-                    HandleInteraction(currentInteractable);
+                    interactText.text = "Press E to " + interactable.interactionName;
                 }
-
-                return;
+                else
+                {
+                    interactText.text = "Press E to Interact";
+                }
             }
-        }
 
-        interactUI.SetActive(false);
-        currentInteractable = null;
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                HandleInteraction(currentInteractable);
+            }
+
+            return;
+        }
     }
+
+    interactUI.SetActive(false);
+    currentInteractable = null;
+}
 
     private GameObject heldItem;
     public Transform holdPoint;
