@@ -74,18 +74,12 @@ public GameObject customerServiceChoicePanel;
         StartDialogue(new DialogueLine[]
         {
             new DialogueLine { speaker = "CEO", line = "Intern." },
-            new DialogueLine { speaker = "CEO", line = "I have implemented full automation of our refund system." },
-            new DialogueLine { speaker = "CEO", line = "The AI generates secure API keys automatically." },
-            new DialogueLine { speaker = "CEO", line = "It even documented them." },
-            new DialogueLine { speaker = "CEO", line = "Somewhere." },
-            new DialogueLine { speaker = "CEO", line = "Unfortunately, it did not insert the API key into the actual system." },
-            new DialogueLine { speaker = "CEO", line = "So currently the AI is confidently refunding nothing." },
-            new DialogueLine { speaker = "CEO", line = "The key is written down in my office." },
+            new DialogueLine { speaker = "CEO", line = "I have intrusted the AI to handle all the APIs for the company" },
+            new DialogueLine { speaker = "CEO", line = "Recently, we haven't gotten any connections with the API" },
+            new DialogueLine { speaker = "CEO", line = "I have no clue what is going on." },
             new DialogueLine { speaker = "CEO", line = "The computer that we use is on the second floor in the first glass room." },
             new DialogueLine { speaker = "CEO", line = "It is the first computer right when you walk in." },
-            new DialogueLine { speaker = "CEO", line = "Retrieve it." },
-            new DialogueLine { speaker = "CEO", line = "Insert it." },
-            new DialogueLine { speaker = "CEO", line = "Restore innovation." }
+            new DialogueLine { speaker = "CEO", line = "Go to the computer and figure out what is wrong" }
         });
     }
 
