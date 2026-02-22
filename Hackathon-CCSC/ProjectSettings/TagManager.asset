@@ -15,6 +15,7 @@ TagManager:
   - Interactable
   - Blender
   - TaskBoard
+  - Computer
   layers:
   - Default
   - TransparentFX
