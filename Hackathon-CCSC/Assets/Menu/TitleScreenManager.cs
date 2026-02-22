@@ -9,7 +9,7 @@ public class TitleScreenManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene(1);
     }
 
     public void QuitGame()
@@ -33,7 +33,7 @@ public class TitleScreenManager : MonoBehaviour
 
     public void SetVolume(float sliderValue)
     {
-        // Convert 0–1 slider to decibel range
+        // Convert 0ï¿½1 slider to decibel range
         masterMixer.SetFloat("MasterVolume", Mathf.Log10(sliderValue) * 20);
     }
 }
