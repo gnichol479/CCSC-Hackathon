@@ -10,16 +10,29 @@ public class PlayerInteraction : MonoBehaviour
 
     private GameObject currentInteractable;
 
+    [Header("Computer UI")]
+public GameObject computerUIPanel;
+public MonoBehaviour playerController;
+
     void Update()
 {
     RaycastHit hit;
 
+    
     if (playerCamera != null &&
         Physics.Raycast(playerCamera.transform.position,
                         playerCamera.transform.forward,
                         out hit,
                         interactDistance))
     {
+
+        if (hit.collider.CompareTag("Computer"))
+{
+    if (Input.GetKeyDown(KeyCode.E))
+    {
+        OpenComputer();
+    }
+}
         if (hit.collider.CompareTag("Interactable") ||
             hit.collider.CompareTag("Blender"))
         {
@@ -111,5 +124,24 @@ void DepositIntoBlender()
     Destroy(heldItem); // or disable instead
 
     heldItem = null;
+}
+void OpenComputer()
+{
+    computerUIPanel.SetActive(true);
+
+    playerController.enabled = false;
+
+    Cursor.lockState = CursorLockMode.None;
+    Cursor.visible = true;
+}
+
+public void CloseComputer()
+{
+    computerUIPanel.SetActive(false);
+
+    playerController.enabled = true;
+
+    Cursor.lockState = CursorLockMode.Locked;
+    Cursor.visible = false;
 }
 }

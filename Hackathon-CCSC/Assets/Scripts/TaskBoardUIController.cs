@@ -12,7 +12,7 @@ public class TaskBoardUIController : MonoBehaviour
     public GameObject taskBoardUIPanel;
     public MonoBehaviour playerController;
     public CutsceneDialogueManager cutsceneManager;
-
+public GameObject apiPreviewImage;
     // ===============================
     // OPEN PREVIEW
     // ===============================
@@ -21,6 +21,11 @@ public class TaskBoardUIController : MonoBehaviour
         taskPreviewPanel.SetActive(true);
         smoothiePreviewImage.SetActive(true);
     }
+    public void OpenAPIPreview()
+{
+    taskPreviewPanel.SetActive(true);
+    apiPreviewImage.SetActive(true);
+}
 
     // ===============================
     // ACCEPT TASK
@@ -40,13 +45,31 @@ public class TaskBoardUIController : MonoBehaviour
 
         cutsceneManager.StartSmoothieTask();
     }
+public void AcceptAPITask()
+{
+    apiPreviewImage.SetActive(false);
+    taskPreviewPanel.SetActive(false);
+    taskBoardUIPanel.SetActive(false);
+
+    playerController.enabled = true;
+
+    Cursor.lockState = CursorLockMode.Locked;
+    Cursor.visible = false;
+
+    cutsceneManager.StartAPITask();
+}
+
+
+
 
     // ===============================
     // CANCEL TASK
     // ===============================
-    public void CancelPreview()
-    {
-        smoothiePreviewImage.SetActive(false);
-        taskPreviewPanel.SetActive(false);
-    }
+public void CancelPreview()
+{
+    smoothiePreviewImage.SetActive(false);
+    apiPreviewImage.SetActive(false);
+
+    taskPreviewPanel.SetActive(false);
+}
 }

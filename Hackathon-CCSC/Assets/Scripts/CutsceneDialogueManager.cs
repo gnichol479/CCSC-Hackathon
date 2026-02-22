@@ -56,6 +56,26 @@ public class CutsceneDialogueManager : MonoBehaviour
         });
     }
 
+    public void StartAPITask()
+{
+    StartDialogue(new string[]
+    {
+        "Intern.",
+        "I have implemented full automation of our refund system.",
+        "The AI generates secure API keys automatically.",
+        "It even documented them.",
+        "Somewhere.",
+        "Unfortunately, it did not insert the API key into the actual system.",
+        "So currently the AI is confidently refunding nothing.",
+        "The key is written down in my office.",
+        "The computer that we use is on the second floor in the first glass room",
+        "It is the first computer right when you walk in",
+        "Retrieve it.",
+        "Insert it.",
+        "Restore innovation."
+    });
+}
+
     // =============================
     // CORE DIALOGUE SYSTEM
     // =============================
